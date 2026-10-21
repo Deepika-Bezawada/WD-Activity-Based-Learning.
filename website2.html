@@ -1,0 +1,548 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Crumbs Bakery</title>
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFF9F2;
+    color: #4A2925;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #6B302B;
+    color: #FFF0D9;
+    text-align: center;
+    padding: 28px 15px;
+}
+
+header h1 {
+    font-size: 36px;
+}
+
+/* Navigation */
+nav {
+    background-color: #3F211F;
+    text-align: center;
+    padding: 14px 8px;
+}
+
+nav a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    margin: 5px 10px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #FFCB9A;
+}
+
+/* Banner */
+.banner {
+    background: linear-gradient(
+        rgba(63, 33, 31, 0.65),
+        rgba(63, 33, 31, 0.65)
+    ), url("https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=1600&q=85");
+
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.banner h2 {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.banner p {
+    margin-bottom: 25px;
+    font-size: 18px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #FFD39B;
+    color: #4A2925;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: white;
+}
+
+/* General sections */
+section {
+    padding: 45px 20px;
+}
+
+section h2 {
+    text-align: center;
+    color: #7A3931;
+    margin-bottom: 25px;
+    font-size: 30px;
+}
+
+.pink-section {
+    background-color: #FCE9E5;
+}
+
+/* Product gallery */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    max-width: 1150px;
+    margin: auto;
+}
+
+.product-card {
+    flex: 1 1 260px;
+    max-width: 340px;
+    background-color: white;
+    border: 1px solid #E8C9BF;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 18px;
+    box-shadow: 0 4px 12px #4A29251A;
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.product-card h3 {
+    margin: 12px 8px 5px;
+    color: #6B302B;
+}
+
+.product-card p {
+    padding: 3px 10px;
+}
+
+.price {
+    color: #A04432;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Seasonal offer */
+.offer {
+    background-color: #6B302B;
+    color: #FFF0D9;
+    text-align: center;
+    padding: 45px 20px;
+}
+
+.offer h2 {
+    color: #FFD39B;
+}
+
+.offer h3 {
+    margin: 12px 0;
+    font-size: 24px;
+}
+
+/* Custom cakes */
+.intro {
+    text-align: center;
+    max-width: 700px;
+    margin: -10px auto 25px;
+}
+
+
+/* Order Section */
+.order-section {
+    background-color: #FCE9E5;
+    padding: 45px 20px;
+    text-align: center;
+}
+
+.order-section > p {
+    margin-bottom: 20px;
+}
+
+.order-form {
+    max-width: 550px;
+    margin: auto;
+    padding: 25px;
+    background-color: white;
+    border: 1px solid #E8C9BF;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px #4A29251A;
+    text-align: left;
+}
+
+.order-form label {
+    display: block;
+    margin-top: 14px;
+    font-weight: bold;
+    color: #6B302B;
+}
+
+.order-form input,
+.order-form select,
+.order-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    border: 1px solid #C9A9A2;
+    border-radius: 5px;
+    font-size: 15px;
+    font-family: Arial, sans-serif;
+}
+
+.order-form button {
+    width: 100%;
+    padding: 13px;
+    margin-top: 22px;
+    background-color: #6B302B;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.order-form button:hover {
+    background-color: #A04432;
+}
+
+@media (max-width: 600px) {
+    .order-section {
+        padding: 30px 12px;
+    }
+
+    .order-form {
+        padding: 18px;
+    }
+}
+
+/* Contact */
+.contact {
+    background-color: #FFF0D9;
+    text-align: center;
+}
+
+.contact p {
+    margin: 8px 0;
+}
+
+/* Footer */
+footer {
+    background-color: #3F211F;
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 28px;
+    }
+
+    nav a {
+        margin: 5px 7px;
+        font-size: 13px;
+    }
+
+    .banner {
+        padding: 65px 15px;
+    }
+
+    .banner h2 {
+        font-size: 28px;
+    }
+
+    .banner p {
+        font-size: 16px;
+    }
+
+    section {
+        padding: 30px 12px;
+    }
+
+    section h2 {
+        font-size: 25px;
+    }
+
+    .product-card {
+        max-width: 100%;
+    }
+
+    .product-card img {
+        height: 210px;
+    }
+}
+
+
+</head>
+</style>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Sweet Crumbs Bakery</h1>
+        <p>Freshly Baked, Lovingly Made!</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#cakes">Cakes</a>
+        <a href="#pastries">Pastries</a>
+        <a href="#cookies">Cookies</a>
+        <a href="#custom">Custom Cakes</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Banner -->
+    <section class="banner" id="home">
+        <h2>Happiness Is Homemade!</h2>
+        <p>Delicious cakes, pastries and cookies for every celebration.</p>
+        <a href="#cakes" class="btn">Explore Our Bakery</a>
+    </section>
+
+    <!-- Cakes -->
+    <section id="cakes">
+        <h2>Our Delicious Cakes</h2>
+
+        <div class="gallery">
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80"
+                     alt="Chocolate birthday cake">
+                <h3>Chocolate Cake</h3>
+                <p>Rich chocolate cream cake.</p>
+                <p class="price">₹700</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=600&q=80"
+                     alt="Fresh strawberry cake">
+                <h3>Strawberry Cake</h3>
+                <p>Fresh cream and strawberries.</p>
+                <p class="price">₹650</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=600&q=80"
+                     alt="Decorated celebration cake">
+                <h3>Vanilla Cake</h3>
+                <p>Soft vanilla sponge cake.</p>
+                <p class="price">₹550</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pastries -->
+    <section id="pastries" class="pink-section">
+        <h2>Fresh Pastries</h2>
+
+        <div class="gallery">
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=600&q=80"
+                     alt="Cream pastry dessert">
+                <h3>Cream Pastry</h3>
+                <p>Light, creamy and delicious.</p>
+                <p class="price">₹100</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=600&q=80"
+                     alt="Chocolate dessert">
+                <h3>Chocolate Pastry</h3>
+                <p>Chocolate layers with ganache.</p>
+                <p class="price">₹120</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1550617931-e17a7b70dce2?auto=format&fit=crop&w=600&q=80"
+                     alt="Cupcakes with frosting">
+                <h3>Vanilla Cupcake</h3>
+                <p>Soft cupcake with sweet frosting.</p>
+                <p class="price">₹80</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cookies -->
+    <section id="cookies">
+        <h2>Cookies and Treats</h2>
+
+        <div class="gallery">
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=600&q=80"
+                     alt="Chocolate chip cookies">
+                <h3>Choco Chip Cookies</h3>
+                <p>Crispy cookies with chocolate chips.</p>
+                <p class="price">₹180 / box</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=600&q=80"
+                     alt="Assorted freshly baked cookies">
+                <h3>Butter Cookies</h3>
+                <p>Golden, buttery homemade cookies.</p>
+                <p class="price">₹150 / box</p>
+            </div>
+
+            <div class="product-card">
+
+<img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=600&q=80"
+     alt="Bakery biscuits and sweet treats">
+
+                                    <h3>Assorted Cookies</h3>
+                <p>A mix of our favorite treats.</p>
+                <p class="price">₹200 / box</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seasonal Offer -->
+    <section class="offer">
+        <h2>🎉 Special Seasonal Offer 🎉</h2>
+        <p>Celebrate special moments with our delicious treats!</p>
+        <h3>Get 15% OFF on selected cakes</h3>
+        <p>Visit our bakery and make every occasion sweeter.</p>
+    </section>
+
+    <!-- Custom Cakes -->
+    <section id="custom" class="pink-section">
+        <h2>Custom Cake Designs</h2>
+        <p class="intro">
+            Make your celebrations special with personalized cakes
+            for birthdays, weddings and anniversaries.
+        </p>
+
+        <div class="gallery">
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1535254973040-607b474cb50d?auto=format&fit=crop&w=600&q=80"
+                     alt="Beautiful birthday cake design">
+                <h3>Birthday Cakes</h3>
+                <p>Customized names and decorations.</p>
+                <p class="price">From ₹900</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=600&q=80"
+                     alt="Elegant celebration cake">
+                <h3>Wedding Cakes</h3>
+                <p>Elegant designs for special days.</p>
+                <p class="price">From ₹2,500</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=600&q=80"
+                     alt="Decorated celebration cake">
+                <h3>Theme Cakes</h3>
+                <p>Creative cakes made to your taste.</p>
+                <p class="price">From ₹1,200</p>
+            </div>
+       
+
+<div>
+
+<!-- Online Order Section -->
+<section id="order" class="order-section">
+    <h2>Place Your Order 🎂</h2>
+    <p>Choose your favorite treats and order today!</p>
+
+    <form class="order-form" action="#" method="get">
+
+        <label for="customer">Your Name</label>
+        <input type="text" id="customer" name="customer"
+               placeholder="Enter your name" required>
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone"
+               placeholder="Enter your phone number" required>
+
+        <label for="product">Choose Your Product</label>
+        <select id="product" name="product" required>
+            <option value="">Select a product</option>
+            <option>Chocolate Cake - ₹700</option>
+            <option>Strawberry Cake - ₹650</option>
+            <option>Vanilla Cake - ₹550</option>
+            <option>Chocolate Pastry - ₹120</option>
+            <option>Vanilla Cupcake - ₹80</option>
+            <option>Choco Chip Cookies - ₹180 per box</option>
+            <option>Custom Cake - From ₹900</option>
+        </select>
+
+        <label for="quantity">Quantity</label>
+        <input type="number" id="quantity" name="quantity"
+               min="1" value="1" required>
+
+        <label for="delivery">Delivery Address</label>
+        <textarea id="delivery" name="delivery"
+                  placeholder="Enter your complete address"
+                  rows="4" required></textarea>
+
+        <label for="date">Delivery Date</label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="message">Special Instructions</label>
+        <textarea id="message" name="message" rows="3"
+                  placeholder="Cake design, message, or other requests"></textarea>
+
+        <button type="submit">Place Order</button>
+    </form>
+</section>
+
+
+
+
+</div>
+ </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <h2>Visit Our Bakery</h2>
+        <p><strong>Address:</strong> Main Road, Vijayawada, Andhra Pradesh</p>
+        <p><strong>Phone:</strong> +91 98765 43210</p>
+        <p><strong>Email:</strong> sweetcrumbs@example.com</p>
+        <p><strong>Opening Hours:</strong> 9:00 AM – 9:00 PM</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Sweet Crumbs Bakery | Baked with Love ❤️</p>
+    </footer>
+
+</body>
+</html>
